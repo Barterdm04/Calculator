@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Phase1Controller;
+package Phase3Controller;
+
 
 import Phase1Model.AreaGeneratorModel1;
+import Phase3Model.AreaGeneratorModel3;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -19,9 +21,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author dbarter1
  */
-@WebServlet(name = "AreaGeneratorController", urlPatterns = {"/agc1"})
-public class AreaGeneratorController1 extends HttpServlet {
-    private final static String RESULT_PAGE = "/Phase1/result.jsp";
+@WebServlet(name = "AreaGeneratorController3", urlPatterns = {"/agc3"})
+public class AreaGeneratorController3 extends HttpServlet {
+    private final static String RESULT_PAGE = "/Phase3/form3.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -36,14 +38,25 @@ public class AreaGeneratorController1 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String value1 = request.getParameter("value1");
         String value2 = request.getParameter("value2");
+        String radius = request.getParameter("circle1");
+        String base = request.getParameter("tri1");
+        String height = request.getParameter("tri2");
         
         double num1 = Double.parseDouble(value1);
         double num2 = Double.parseDouble(value2);
+        double radiusVal = Double.parseDouble(radius);
+        double baseVal = Double.parseDouble(base);
+        double heightVal = Double.parseDouble(height);
         
-        AreaGeneratorModel1 agm = new AreaGeneratorModel1();
-        double area = agm.generateArea(num1, num2);
         
-        request.setAttribute("area", area);
+        AreaGeneratorModel3 agm = new AreaGeneratorModel3();
+        double areaRect = agm.generateAreaRectangle(num1, num2);
+        double areaCircle = agm.generateAreaCircle(radiusVal);
+        double areaTriangle = agm.generateAreaTriangle(baseVal, heightVal);
+        
+        request.setAttribute("areaRect", areaRect);
+        request.setAttribute("areaCircle", areaCircle);
+        request.setAttribute("areaTriangle", areaTriangle);
         
         RequestDispatcher view =
                 request.getRequestDispatcher(RESULT_PAGE);

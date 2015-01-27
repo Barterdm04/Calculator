@@ -5,8 +5,8 @@
  */
 package Phase2Controller;
 
-import Phase1Controller.*;
-import Phase1Model.AreaGeneratorModel1;
+
+import Phase2Model.AreaGeneratorModel2;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -41,7 +41,7 @@ public class AreaGeneratorController2 extends HttpServlet {
         double num1 = Double.parseDouble(value1);
         double num2 = Double.parseDouble(value2);
         
-        AreaGeneratorModel1 agm = new AreaGeneratorModel1();
+        AreaGeneratorModel2 agm = new AreaGeneratorModel2();
         double area = agm.generateArea(num1, num2);
         
         request.setAttribute("area", area);
