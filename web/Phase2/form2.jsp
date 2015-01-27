@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Enter the information below to calculate area:</h1>
-        <form id="form2" name="form2" method="POST" action="../agc2">
+        <form id="form2" name="form2" method="POST" action='<%= request.getContextPath() + "/agc2"%>'>
             <input id="value1" name="value1" type="text" value="ENTER LENGTH" />
             <input id="value2" name="value2" type="text" value ="ENTER WIDTH" />
             <input type="submit" name="submit" value="Enter" />
