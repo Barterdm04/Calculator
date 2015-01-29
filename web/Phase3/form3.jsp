@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Area Form</title>
-        <link href="/Phase3/form.css" rel="stylesheet" type="text/css"/>
+        <link href='<%= request.getContextPath() + "/content/form.css"%>' rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div class="box">
@@ -32,11 +32,13 @@
                 results1 = "Rectangle Area Results: " + areaRectString;
             }
         %>
-        <br><br>
+        
+        <br>
+        
+        <h2 class="results"><%= results1 %></h2>
         </div>
         <br>
         <div class="box">
-        <h2 class="results"><%= results1 %></h2>
         <h3>Enter the information below to calculate the area of a circle:</h3>
             <input id="circle1" name="circle1" type="text" value="" placeholder="Radius"/>
 
@@ -51,9 +53,8 @@
                 results2 = "Circle Area Results: " + areaCircleString;
             }
         %>
-        <br><br>
-        </div>
-        <h2 class="results"><%= results2 %></h2>  
+        <h2 class="results"><%= results2 %></h2>
+        </div>  
         <br>
         <div class="box">
         <h3>Enter the information below to calculate the area of a triangle:</h3>
