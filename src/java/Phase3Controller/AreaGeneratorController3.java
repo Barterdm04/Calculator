@@ -5,11 +5,8 @@
  */
 package Phase3Controller;
 
-
-import Phase1Model.AreaGeneratorModel1;
 import Phase3Model.AreaGeneratorModel3;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

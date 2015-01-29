@@ -76,7 +76,7 @@
         </div>
         <br>
         <br>
-        <input type="submit" name="submit" value="Calculate" />
+        <input type="submit" name="submit" value="Calculate" class="button"/>
         </form>
     </body>
 </html>

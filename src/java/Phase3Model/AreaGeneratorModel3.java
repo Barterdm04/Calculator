@@ -13,10 +13,11 @@ import Phase1Model.*;
  * @author dbarter1
  */
 public class AreaGeneratorModel3 {
+    private final double TRIANGLE_MULTIPLIER = .5;
     
     public double generateAreaRectangle(double value1, double value2){
-        double area = value1 * value2;   
-        return area;
+        double areaRectangle = value1 * value2;   
+        return areaRectangle;
     }
     
     public double generateAreaCircle(double radius){
@@ -25,7 +26,7 @@ public class AreaGeneratorModel3 {
     }
     
     public double generateAreaTriangle(double base, double height){
-        double areaTriangle = (.5 * base * height);
+        double areaTriangle = (TRIANGLE_MULTIPLIER * base * height);
         return areaTriangle;
     }
 }
