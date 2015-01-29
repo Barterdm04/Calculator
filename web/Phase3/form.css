@@ -1,0 +1,16 @@
+
+body {
+    font-family: 'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif;
+    text-align: center;
+}
+
+.results {
+    font-weight: bold; 
+}
+
+.box {
+    border: 2pt black solid;
+    margin-left: auto;
+    margin-right: auto;
+    width:60%;
+}

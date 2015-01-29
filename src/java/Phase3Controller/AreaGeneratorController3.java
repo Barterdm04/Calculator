@@ -36,28 +36,35 @@ public class AreaGeneratorController3 extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+        AreaGeneratorModel3 agm = new AreaGeneratorModel3();
+        
         String value1 = request.getParameter("value1");
         String value2 = request.getParameter("value2");
         String radius = request.getParameter("circle1");
         String base = request.getParameter("tri1");
         String height = request.getParameter("tri2");
+  
+        if(!(value1 == null || value1.isEmpty() || value2 == null || value2.isEmpty())){
+            double num1 = Double.parseDouble(value1);
+            double num2 = Double.parseDouble(value2);
+            double areaRect = agm.generateAreaRectangle(num1, num2);
+            request.setAttribute("areaRect", areaRect);
+        }
         
-        double num1 = Double.parseDouble(value1);
-        double num2 = Double.parseDouble(value2);
-        double radiusVal = Double.parseDouble(radius);
-        double baseVal = Double.parseDouble(base);
-        double heightVal = Double.parseDouble(height);
+        if(!(radius == null || radius.isEmpty())){
+            double radiusVal = Double.parseDouble(radius);
+            double areaCircle = agm.generateAreaCircle(radiusVal);
+            request.setAttribute("areaCircle", areaCircle);
+        }
         
-        
-        AreaGeneratorModel3 agm = new AreaGeneratorModel3();
-        double areaRect = agm.generateAreaRectangle(num1, num2);
-        double areaCircle = agm.generateAreaCircle(radiusVal);
-        double areaTriangle = agm.generateAreaTriangle(baseVal, heightVal);
-        
-        request.setAttribute("areaRect", areaRect);
-        request.setAttribute("areaCircle", areaCircle);
-        request.setAttribute("areaTriangle", areaTriangle);
-        
+        if(!(base == null || base.isEmpty() || height == null || height.isEmpty())){
+            double baseVal = Double.parseDouble(base);
+            double heightVal = Double.parseDouble(height);
+            double areaTriangle = agm.generateAreaTriangle(baseVal, heightVal);
+            request.setAttribute("areaTriangle", areaTriangle);
+        }
+
         RequestDispatcher view =
                 request.getRequestDispatcher(RESULT_PAGE);
         view.forward(request, response);
