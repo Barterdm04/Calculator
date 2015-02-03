@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Phase3Controller;
+package Phase4Controller;
 
 import Phase3Model.AreaGeneratorModel3;
 import java.io.IOException;
@@ -19,18 +19,11 @@ import javax.swing.JOptionPane;
  *
  * @author dbarter1
  */
-@WebServlet(name = "AreaGeneratorController3", urlPatterns = {"/agc3"})
-public class AreaGeneratorController3 extends HttpServlet {
-    private final static String RESULT_PAGE = "/Phase3/form3.jsp";
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+@WebServlet(name = "AreaGeneratorController4", urlPatterns = {"/agc4"})
+public class AreaGeneratorController4 extends HttpServlet {
+    private final static String RESULT_PAGE = "/Phase4/phase4.jsp";
+ 
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
